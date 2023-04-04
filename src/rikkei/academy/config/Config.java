@@ -10,18 +10,26 @@ public class Config<T> {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
-    public static final String PATH_CATEGORY = "D:\\REACT\\untitled2\\src\\rikkei\\academy\\database\\category.txt";
+    public static final String PATH_CATEGORY = "E:\\JAVACORE\\MD3-CRUD-Category-Binary\\src\\rikkei\\academy\\database\\category.txt";
+    public static final String PATH_PRODUCT = "E:\\JAVACORE\\MD3-CRUD-Category-Binary\\src\\rikkei\\academy\\database\\product.txt";
+
     //Phương thức đọc file
     public  List<T> readFromFile(String pathFile)  {
         List<T> tList = new ArrayList<>();
+
         try {
-            FileInputStream fileInputStream = new FileInputStream(pathFile);
-            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            tList = (List<T>) objectInputStream.readObject();
-            fileInputStream.close();
-            objectInputStream.close();
-        } catch (FileNotFoundException f){
+            File file=new File(pathFile);
+            if (file.exists()) {
+                FileInputStream fileInputStream = new FileInputStream(pathFile);
+                ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+                tList = (List<T>) objectInputStream.readObject();
+                fileInputStream.close();
+                objectInputStream.close();
+            }
+        } catch (FileNotFoundException f) {
             System.err.println("File not found!");
+        }catch (EOFException eof){
+
         } catch (IOException i){
             System.err.println("IOE exception!");
         } catch (ClassNotFoundException c){
