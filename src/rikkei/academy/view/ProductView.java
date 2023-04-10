@@ -1,4 +1,4 @@
-package rikkei.academy.view.product;
+package rikkei.academy.view;
 
 import rikkei.academy.config.Config;
 import rikkei.academy.controller.ProductController;

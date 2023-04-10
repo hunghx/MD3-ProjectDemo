@@ -10,8 +10,9 @@ public class Config<T> {
         Scanner scanner = new Scanner(System.in);
         return scanner;
     }
-    public static final String PATH_CATEGORY = "E:\\JAVACORE\\MD3-CRUD-Category-Binary\\src\\rikkei\\academy\\database\\category.txt";
-    public static final String PATH_PRODUCT = "E:\\JAVACORE\\MD3-CRUD-Category-Binary\\src\\rikkei\\academy\\database\\product.txt";
+    public static final String PATH_CATEGORY = "E:\\MD2-CRUDS--MVC--Product--Manager\\src\\rikkei\\academy\\database\\category.txt";
+    public static final String PATH_PRODUCT = "E:\\MD2-CRUDS--MVC--Product--Manager\\src\\rikkei\\academy\\database\\product.txt";
+    public static final String PATH_USER = "E:\\MD2-CRUDS--MVC--Product--Manager\\src\\rikkei\\academy\\database\\user.txt";
 
     //Phương thức đọc file
     public  List<T> readFromFile(String pathFile)  {
